@@ -9,7 +9,7 @@ if(!isNaN(userWord)){
 function palindromeChecker(){
 
     let counter = -1
-    let correct = -1
+    let correct = 0
 
     for(let i = userWord.length-1; i >= 0; i--){
 
@@ -22,7 +22,7 @@ function palindromeChecker(){
             break
         }
 
-        if(correct == userWord.length-1){
+        if(correct == userWord.length){
             alert("The word is a palindrome")
         }
     }
