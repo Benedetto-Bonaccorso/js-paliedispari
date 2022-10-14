@@ -3,20 +3,27 @@ let userWord = prompt("insert a word to check for palindromy")
 if(!isNaN(userWord)){
     alert("Please refresh and insert a word")
 } else {
-    console.log("aa")
     palindromeChecker()
 }
 
 function palindromeChecker(){
 
-    let counter = userWord.length
+    let counter = -1
+    let correct = -1
 
-    for(let i = 0; i < userWord.length; i++){
+    for(let i = userWord.length-1; i >= 0; i--){
 
-        if(userWord[i] == userWord[0-counter]){
-            console.log("ok")
+        counter++
+
+        if(userWord[i] == userWord[counter]){
+            correct ++ 
+        } else {
+            alert("Your word is not a palindrome")
+            break
         }
 
-        counter--
+        if(correct == userWord.length-1){
+            alert("The word is a palindrome")
+        }
     }
 }
